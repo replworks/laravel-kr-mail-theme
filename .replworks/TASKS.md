@@ -125,7 +125,7 @@
 
 ## Phase 4: Automated checks
 
-- [ ] T-025 Mailpit client helper for tests
+- [x] T-025 Mailpit client helper for tests
   - Depends: T-003, T-022
   - Done when: a test can empty Mailpit, send a rendered mail, and read back HTML part, TEXT part, headers, and HTML check result.
 
