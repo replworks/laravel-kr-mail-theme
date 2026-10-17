@@ -1,4 +1,8 @@
 /* Placeholder mobile CSS. Visual design is human-owned; these values are neutral placeholders. */
+.kr-container {
+    width: 100% !important;
+    max-width: 100% !important;
+}
 .kr-text {
     padding: 12px;
 }
