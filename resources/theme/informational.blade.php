@@ -13,7 +13,7 @@
       <table role="presentation" class="kr-container" width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px;font-family:'Apple SD Gothic Neo','Malgun Gothic','Noto Sans KR',sans-serif;">
         @include('kr-mail-theme::partials.header')
         <tr>
-          <td style="padding:16px;">
+          <td class="kr-text" style="padding:16px;">
             {!! $body !!}
           </td>
         </tr>

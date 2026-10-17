@@ -107,7 +107,7 @@ Service Mailable / Workbench / Checks
 
 ### CssInliner
 
-- Inlines `base.css` into the HTML. Appends `dark.css` inside `@media (prefers-color-scheme: dark)` and `mobile.css` inside a narrow-width media query, as a `<style>` element in `<head>`. With a forced scheme (Workbench preview only), the chosen variant is appended without the media condition.
+- Inlines `base.css` into the HTML. Appends `dark.css` inside `@media (prefers-color-scheme: dark)` and `mobile.css` inside a narrow-width media query, as a `<style>` element in `<head>`. With a forced scheme (Workbench preview only), the document color scheme is pinned to the chosen variant and the chosen variant is appended without the media condition.
 
 ### UnsubscribeUrlGenerator
 
