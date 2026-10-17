@@ -24,7 +24,7 @@
   - Work: send one mail with HTML and TEXT parts over SMTP, then call the Mailpit HTTP API for message list, message HTML, message TEXT, headers, HTML check, and delete-all. Save one real HTML check response as a fixture.
   - Done when: ARCHITECTURE.md "Automated Checks" steps 3 and 4 name the real endpoints and the exact JSON field that means "feature with no support in any mail client".
 
-- [ ] T-004 Verify dark and mobile CSS against the HTML check
+- [x] T-004 Verify dark and mobile CSS against the HTML check
   - Depends: T-003
   - Work: build a minimal table-layout mail with `prefers-color-scheme` and a narrow-width media query in a `<style>` element. Run the HTML check.
   - Done when: the result is recorded. If the HTML check reports unsupported features, the Developer decides how FR-054 and FR-028 are reconciled and PRODUCT_SPEC.md is updated.

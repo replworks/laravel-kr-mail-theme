@@ -53,7 +53,7 @@ No other production dependency is allowed.
 - One Theme in the repository. No Theme selection mechanism.
 - Layout: HTML tables with inline styles. No flexbox, no grid.
 - CSS source: `base.css` (inlined), `dark.css` and `mobile.css` (kept in a `<style>` element, not inlined).
-- Dark color scheme: CSS `prefers-color-scheme` media query plus `color-scheme` meta. [UNVERIFIED: whether the Mailpit HTML check reports `prefers-color-scheme` as unsupported in some client. T-004. FR-054 depends on the result.]
+- Dark color scheme: CSS `prefers-color-scheme` media query plus `color-scheme` meta. [Verified in T-004] The Mailpit HTML check (v1.30.3) does not evaluate `prefers-color-scheme` as a feature; a mail that uses it reports the enclosing `@media` rule as `css-at-media`, and no feature is unsupported in every evaluated client for the recorded sample. FR-054 and FR-028 therefore do not conflict. Fixture: `tests/Fixtures/mailpit-html-check-dark-mobile.json`.
 - Font stack: `Apple SD Gothic Neo`, `Malgun Gothic`, `Noto Sans KR`, then generic sans-serif. No web fonts.
 - Images: Logo is referenced by absolute URL supplied through Brand Information. The Package embeds no image. The Logo Placeholder is text.
 
