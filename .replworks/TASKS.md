@@ -118,7 +118,7 @@
   - Work: EL-001 to EL-007 and the Initial, Loading, Populated, Error states.
   - Done when: in a browser, changing each selector updates EL-005, EL-006, EL-007 as listed in PRODUCT_SPEC Interactions; Mobile width is 375 px; Dark shows the Dark variant (FLOW-002 steps 1 and 2).
 
-- [ ] T-024 SCR-001 Test Delivery
+- [x] T-024 SCR-001 Test Delivery
   - Depends: T-023
   - Work: EL-008 to EL-011, Sending, Sent, Send failed states, SMTP to Mailpit only, both parts delivered.
   - Done when: AC-014 passes with Mailpit running; AC-015 passes with Mailpit stopped (EL-010 shows failed and ERR-005, no retry); EL-009 is disabled for an empty or invalid address (ERR-006).

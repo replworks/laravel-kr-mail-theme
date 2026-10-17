@@ -13,6 +13,16 @@ final class Preview
 
     public static function render(?string $kind, ?string $body, ?string $scheme): RenderedMail
     {
+        return self::build($kind, $body, $scheme === 'dark' ? 'dark' : 'light');
+    }
+
+    public static function deliver(?string $kind, ?string $body): RenderedMail
+    {
+        return self::build($kind, $body, null);
+    }
+
+    private static function build(?string $kind, ?string $body, ?string $forcedScheme): RenderedMail
+    {
         $samples = require __DIR__.'/../../samples.php';
 
         $kind = match ((string) $kind) {
@@ -20,7 +30,6 @@ final class Preview
             default => MailKind::Informational,
         };
         $body = array_key_exists((string) $body, $samples['bodies']) ? (string) $body : 'receipt';
-        $scheme = $scheme === 'dark' ? 'dark' : 'light';
 
         $markdown = (new BodyViewRenderer)->render(
             $samples['view_namespace'].'::'.$samples['bodies'][$body],
@@ -33,7 +42,7 @@ final class Preview
             self::SUBJECT,
             $markdown,
             $samples['user_identifier'],
-            $scheme,
+            $forcedScheme,
         );
     }
 }
