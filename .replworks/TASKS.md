@@ -67,7 +67,7 @@
   - Work: table layout, header (Service Name and Logo, or their Placeholders), Mail Body slot, footer that shows only the supplied fields without their labels when missing, Korean font stack.
   - Done when: tests pass for FR-001 to FR-006, FR-009, FR-011, FR-012 (AC-001, AC-002, AC-003).
 
-- [ ] T-013 Theme: dark variant and mobile CSS
+- [x] T-013 Theme: dark variant and mobile CSS
   - Depends: T-012
   - Done when: a test confirms Light and Dark CSS exist (FR-028); a test confirms narrow-width CSS exists and no fixed width is wider than Mobile width (FR-029).
 
