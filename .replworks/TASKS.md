@@ -34,7 +34,7 @@
   - Work: in a Testbench test, build a Mailable that carries a raw HTML string, a raw TEXT string, and the two List-Unsubscribe headers, in Laravel 12 and 13. Send it to Mailpit.
   - Done when: Mailpit shows both parts and both headers, and the working calls are written in ARCHITECTURE.md under RendersKrTheme.
 
-- [ ] T-006 Verify Markdown conversion with one syntax tree
+- [x] T-006 Verify Markdown conversion with one syntax tree
   - Depends: T-002
   - Work: with league/commonmark, render one Markdown sample to HTML with a custom rule for a link-only paragraph, and walk the same tree to produce TEXT. The sample has a table, a blockquote, a link, and a button paragraph.
   - Done when: the sample produces the expected HTML button and the expected TEXT forms, or the TEXT forms in ARCHITECTURE.md are corrected to what is achievable.
