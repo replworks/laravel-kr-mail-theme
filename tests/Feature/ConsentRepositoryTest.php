@@ -3,7 +3,7 @@
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use Replworks\KrMailTheme\ConsentRepository;
+use Replworks\KrMailTheme\Unsubscribe\ConsentRepository;
 
 uses(RefreshDatabase::class);
 
