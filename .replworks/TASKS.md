@@ -147,7 +147,7 @@
   - Depends: T-018, T-021, T-024, T-028
   - Done when: AC-001 to AC-021 each map to a named passing test or a recorded manual run, listed in one table in the repository.
 
-- [ ] T-030 README
+- [x] T-030 README
   - Depends: T-029
   - Work: install; the environment variable list; what happens when a field is not set (Service Name and Logo show Placeholders that go out in real mail; footer fields are not shown, including Company Name and Customer Center Contact in Advertising Mail); Mail Body Markdown rules (link-only paragraph is a button, no four-space indentation inside Blade, `$recipientDisplayName`); Mailable usage; Advertising Mail usage; Unsubscribe Event listening; Workbench and checks usage; Non-Goals; what the Service still has to do itself (prior consent, sending hours, honoring the consent value). Include the legal basis (정보통신망법 제50조) and the date of the KISA guide the Theme was built against.
   - Done when: a person who has not seen the repository can complete FLOW-001 using only the README.
