@@ -133,7 +133,7 @@
   - Depends: T-025, T-016
   - Done when: the suite runs 8 combinations and asserts FR-054 to FR-057; each assertion message starts with its FR ID.
 
-- [ ] T-027 Check suite: snapshot comparison
+- [x] T-027 Check suite: snapshot comparison
   - Depends: T-026
   - Done when: FR-058 passes against approved `.html` and `.txt` files in `tests/Snapshots`; changing one character in a Theme file or the TEXT layout makes the matching combinations fail; the approve switch rewrites the files.
 
