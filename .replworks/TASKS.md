@@ -54,7 +54,7 @@
   - Work: inline `base.css`. Keep dark and mobile CSS as a `<style>` element in `<head>`. Support a forced scheme.
   - Done when: a unit test shows inlined styles on elements and the media-query CSS present and unchanged; with a forced scheme the variant appears without the media condition.
 
-- [ ] T-010 MarkdownConverter: HTML renderer
+- [x] T-010 MarkdownConverter: HTML renderer
   - Depends: T-006
   - Done when: tests pass for FR-030, FR-031, FR-032: paragraph, link, table, blockquote, and the button rule; raw HTML in the Markdown is escaped (AC-011).
 
