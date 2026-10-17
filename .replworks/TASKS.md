@@ -58,7 +58,7 @@
   - Depends: T-006
   - Done when: tests pass for FR-030, FR-031, FR-032: paragraph, link, table, blockquote, and the button rule; raw HTML in the Markdown is escaped (AC-011).
 
-- [ ] T-011 MarkdownConverter: TEXT renderer
+- [x] T-011 MarkdownConverter: TEXT renderer
   - Depends: T-006
   - Done when: tests pass for the Mail Body part of FR-035: no HTML tags, no Markdown link syntax, every URL in full.
 

@@ -92,6 +92,7 @@ Service Mailable / Workbench / Checks
   - table: one line per row, cells joined by ` | `
   - blockquote: each line prefixed with `> `
   - anything else: its text content
+  - inline HTML: its tags are removed and the text they wrap is kept; a raw HTML block is dropped
   - blocks are separated by a blank line, and the output ends with a single newline
 - [Verified in T-006] One parse feeds both renderers. The HTML renderer overrides the paragraph renderer so a paragraph whose only child is one link becomes a table-based button; the TEXT renderer walks the same `Document`. The forms above are what the spike produces, pinned by `tests/MarkdownConversionTest.php`.
 
