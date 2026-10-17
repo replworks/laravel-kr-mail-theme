@@ -79,7 +79,7 @@
   - Depends: T-012, T-014
   - Done when: tests pass for FR-010, FR-013 (AC-005), and an Advertising Mail with no Company Name and no Customer Center Contact renders with the Unsubscribe Link and neither field.
 
-- [ ] T-016 MailRenderer
+- [x] T-016 MailRenderer
   - Depends: T-008, T-011, T-013, T-015
   - Work: the pipeline from ARCHITECTURE.md, the TEXT layout, headers for Advertising Mail only.
   - Done when: tests pass for FR-005 to FR-007 in the TEXT part, FR-021 to FR-024, FR-033 to FR-037, ERR-001, ERR-004 (AC-003, AC-004, AC-006, AC-008, AC-012).
