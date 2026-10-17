@@ -132,7 +132,10 @@ Service Mailable / Workbench / Checks
 - One method for a Mailable: Mail Kind, Mail Subject, Mail Body Blade view and data, Recipient User Identifier, optional Recipient Name.
 - Uses BodyViewRenderer to render the view to Markdown, calls MailRenderer, then sets subject, HTML part, TEXT part, and extra headers on the Mailable.
 - The Service sends the Mailable with its own mailer.
-- [UNVERIFIED: how to set raw HTML and raw TEXT strings and extra headers on a Mailable in Laravel 12 and 13. T-005.]
+- Setting the parts and headers on a Mailable (verified live in T-005 against Mailpit v1.30.3 under Laravel 12.70.0 and Laravel 13.37.0; Mailpit shows both parts and both headers):
+  - HTML part: `$mailable->html($htmlString)`.
+  - TEXT part: `$mailable->text(new \Illuminate\Support\HtmlString($textString))`. A raw TEXT string is passed as an `Htmlable`, so the Mailer returns it unchanged instead of resolving it as a view name.
+  - Headers: define `public function headers(): \Illuminate\Mail\Mailables\Headers` returning `new Headers(text: ['List-Unsubscribe' => $url, 'List-Unsubscribe-Post' => 'List-Unsubscribe=One-Click'])`.
 
 ### BodyViewRenderer
 
