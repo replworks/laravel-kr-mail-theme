@@ -199,8 +199,8 @@ Table `kr_mail_consents`:
 - Per combination:
   1. Render with MailRenderer using the Workbench Brand Information.
   2. Send to Mailpit over SMTP (Mailpit is emptied at the start of the run).
-  3. Read the message HTML part, TEXT part, headers, and HTML check result through the Mailpit HTTP API.
-  4. Assert FR-054 from the HTML check result. [UNVERIFIED: JSON shape. T-003.]
+  3. Read the message HTML part (`GET /view/{ID}.html`), TEXT part (`GET /view/{ID}.txt`), headers (`GET /api/v1/message/{ID}/headers`; summary fields `HTML` and `Text` also available at `GET /api/v1/message/{ID}`), and HTML check result (`GET /api/v1/message/{ID}/html-check`) through the Mailpit HTTP API. Message list is `GET /api/v1/messages` and delete-all is `DELETE /api/v1/messages` (verified live in T-003; one real response saved at `tests/Fixtures/mailpit-html-check.json`).
+  4. Assert FR-054 from the HTML check result: fail when any `Results[]` entry has `Support: "no"` for every client of a feature (i.e. the `Warnings[]` entry lists a feature with no supporting mail client). The exact field path is `Warnings[].Results[].Support`.
   5. Assert FR-005, FR-006, FR-033, FR-034, FR-035.
   6. Advertising only: assert FR-025, FR-013, FR-021, FR-022, FR-036.
   7. Informational only: assert FR-011, FR-023, FR-024, FR-037.

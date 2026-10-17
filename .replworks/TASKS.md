@@ -14,12 +14,12 @@
   - Work: composer.json (library, auto-discovery), Pest, Pint, Testbench with Workbench, `compose.yaml` for Mailpit, empty service provider.
   - Done when: `composer test` runs an empty suite with exit code 0, and the Mailpit web interface opens after `docker compose up -d`.
 
-- [ ] T-002 Verify version constraints and bundled libraries
+- [x] T-002 Verify version constraints and bundled libraries
   - Depends: T-001
   - Work: confirm the minimum PHP version of Laravel 12 and 13, the Testbench major for each, that league/commonmark (with table support) and tijsverkoyen/css-to-inline-styles come with illuminate/mail, and that a flat-key override in a Service config file keeps the other package keys. Fix `composer.json`.
   - Done when: `composer update` succeeds under both Laravel 12 and Laravel 13, and TECH_STACK.md no longer has these [UNVERIFIED] marks.
 
-- [ ] T-003 Verify the Mailpit API
+- [x] T-003 Verify the Mailpit API
   - Depends: T-001
   - Work: send one mail with HTML and TEXT parts over SMTP, then call the Mailpit HTTP API for message list, message HTML, message TEXT, headers, HTML check, and delete-all. Save one real HTML check response as a fixture.
   - Done when: ARCHITECTURE.md "Automated Checks" steps 3 and 4 name the real endpoints and the exact JSON field that means "feature with no support in any mail client".
