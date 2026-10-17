@@ -130,7 +130,7 @@ function krCheckUnsupportedFeatures(array $check): array
     return $unsupported;
 }
 
-it('checks every Mail Kind and Sample Body combination (FR-054 to FR-058)', function (MailKind $kind, string $body, string $name) {
+it('checks FR-054 to FR-058', function (MailKind $kind, string $body, string $name) {
     $client = krCheckPrepare();
     krCheckApplyBrand();
 
