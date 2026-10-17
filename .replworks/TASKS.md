@@ -94,7 +94,7 @@
 
 ## Phase 2: Unsubscribe
 
-- [ ] T-019 Migration and ConsentRepository
+- [x] T-019 Migration and ConsentRepository
   - Depends: T-001
   - Done when: tests pass for FR-047 to FR-049 and FR-051 at repository level: row created when missing, true to false returns changed, false stays false and returns not changed, value stored as boolean.
 
