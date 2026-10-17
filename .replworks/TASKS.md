@@ -62,7 +62,7 @@
   - Depends: T-006
   - Done when: tests pass for the Mail Body part of FR-035: no HTML tags, no Markdown link syntax, every URL in full.
 
-- [ ] T-012 Theme: Informational layout
+- [x] T-012 Theme: Informational layout
   - Depends: T-007, T-009, T-010
   - Work: table layout, header (Service Name and Logo, or their Placeholders), Mail Body slot, footer that shows only the supplied fields without their labels when missing, Korean font stack.
   - Done when: tests pass for FR-001 to FR-006, FR-009, FR-011, FR-012 (AC-001, AC-002, AC-003).
