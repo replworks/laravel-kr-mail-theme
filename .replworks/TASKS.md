@@ -108,7 +108,7 @@
 
 ## Phase 3: Workbench
 
-- [ ] T-022 Sample Bodies and Workbench Brand Information
+- [x] T-022 Sample Bodies and Workbench Brand Information
   - Depends: T-016, T-017
   - Work: four Blade Sample Bodies that output Markdown, one fixed Brand Information set with every field, one fixed Recipient User Identifier, one fixed Recipient Name.
   - Done when: each of the four renders inside both Mail Kinds without error (FR-041).
