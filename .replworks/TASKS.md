@@ -45,7 +45,7 @@
   - Depends: T-002
   - Done when: unit tests pass for FR-003, FR-004, FR-007, FR-008, FR-039, FR-040, ERR-002: unset and empty values count as not supplied; Service Name and Logo give their Placeholders; the five footer fields are null when not supplied; environment-only values appear; a Service config value wins over an environment value; other keys survive the override (AC-002, AC-003, AC-013).
 
-- [ ] T-008 MailKind and SubjectFormatter
+- [x] T-008 MailKind and SubjectFormatter
   - Depends: T-001
   - Done when: unit tests pass for FR-025, FR-026, FR-027 including a subject that already begins with `(광고)` (AC-009).
 
