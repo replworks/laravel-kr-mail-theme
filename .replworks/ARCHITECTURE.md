@@ -137,7 +137,7 @@ Service Mailable / Workbench / Checks
 - Setting the parts and headers on a Mailable (verified live in T-005 against Mailpit v1.30.3 under Laravel 12.70.0 and Laravel 13.37.0; Mailpit shows both parts and both headers):
   - HTML part: `$mailable->html($htmlString)`.
   - TEXT part: `$mailable->text(new \Illuminate\Support\HtmlString($textString))`. A raw TEXT string is passed as an `Htmlable`, so the Mailer returns it unchanged instead of resolving it as a view name.
-  - Headers: define `public function headers(): \Illuminate\Mail\Mailables\Headers` returning `new Headers(text: ['List-Unsubscribe' => $url, 'List-Unsubscribe-Post' => 'List-Unsubscribe=One-Click'])`.
+  - Headers: define `public function headers(): \Illuminate\Mail\Mailables\Headers` returning `new Headers(text: ['List-Unsubscribe' => '<'.$url.'>', 'List-Unsubscribe-Post' => 'List-Unsubscribe=One-Click'])`. The Unsubscribe Link goes in angle brackets as RFC 8058 expects.
 
 ### BodyViewRenderer
 
