@@ -71,7 +71,7 @@
   - Depends: T-012
   - Done when: a test confirms Light and Dark CSS exist (FR-028); a test confirms narrow-width CSS exists and no fixed width is wider than Mobile width (FR-029).
 
-- [ ] T-014 UnsubscribeUrlGenerator
+- [x] T-014 UnsubscribeUrlGenerator
   - Depends: T-001
   - Done when: tests pass for FR-016 to FR-020: absolute URL, uses the configured Unsubscribe Path, altered URL fails the signature check, URL does not expire (AC-007).
 
