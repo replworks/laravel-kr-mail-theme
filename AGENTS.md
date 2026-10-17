@@ -358,3 +358,25 @@ Task is complete only when:
 - E2E tests pass for any EXTERNAL_BOUNDARY code touched
 
 Then stop.
+
+---
+
+## SEQUENTIAL_RUN (human-authorized 2026-10-17)
+
+- While cable8mm's authorized sequential run is in effect, the AI does not
+  stop between tasks (TASK_EXECUTION step 11 is suspended) and does not ask
+  for human approval to start each task.
+- Per-task cycle: pull main, create branch `t-NNN-slug`, implement, run
+  tests, commit as cable8mm, open a PR as replworks-bot
+  (reviewer: cable8mm, assignee: replworks-bot), merge only when CI checks
+  present on the PR are green, pull main, continue with the next task.
+- No CI configured means no CI gate. A merge never goes directly to main;
+  every change follows the branch to PR to merge cycle.
+- Stop and ask the human only when: an UNVERIFIED gap or document conflict
+  needs a decision, a live EXTERNAL_BOUNDARY is unreachable, a task
+  explicitly requires a Developer decision, a manual/permission step is
+  required, tests or CI cannot be fixed, or permissions are missing.
+- Commits use `Samgu Lee <cable8mm@gmail.com>` with trailer
+  `Co-authored-by: Muse Spark <muse-spark@replworks.dev>`.
+- PR commands run as replworks-bot via `gh auth switch --user replworks-bot`
+  and switch back to cable8mm afterwards.
