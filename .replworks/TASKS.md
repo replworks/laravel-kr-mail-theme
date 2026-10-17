@@ -88,7 +88,7 @@
   - Depends: T-001
   - Done when: tests pass for FR-060 and FR-061: `홍길동` gives `홍길동님`; null and empty string give `회원님`; a Service variable and `$recipientDisplayName` are both available in the view; HTML in a Service variable is escaped (AC-021).
 
-- [ ] T-018 RendersKrTheme trait
+- [x] T-018 RendersKrTheme trait
   - Depends: T-005, T-016, T-017
   - Done when: a Testbench test sends a Mailable through the `array` mailer and asserts subject, HTML part, TEXT part, and headers; no Package file is copied into the test application (FR-038, AC-013).
 
