@@ -5,14 +5,14 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 use Replworks\KrMailTheme\Unsubscribe\UnsubscribeUrlGenerator;
 
-function krRegisterUnsubscribeRoute(string $path = 'unsubscribe'): void
+function krSetUnsubscribeRouteUri(string $path): void
 {
-    Route::get('/'.$path, fn () => 'ok')->name(UnsubscribeUrlGenerator::ROUTE_NAME);
+    Route::getRoutes()
+        ->getByName(UnsubscribeUrlGenerator::ROUTE_NAME)
+        ->setUri($path);
 }
 
 it('generates a signed, absolute Unsubscribe Link from the Recipient User Identifier (FR-016, FR-017)', function () {
-    krRegisterUnsubscribeRoute();
-
     $url = UnsubscribeUrlGenerator::generate('user-123');
 
     expect($url)->toStartWith('http')
@@ -21,8 +21,7 @@ it('generates a signed, absolute Unsubscribe Link from the Recipient User Identi
 });
 
 it('uses the configured Unsubscribe Path (FR-018, AC-007)', function () {
-    config(['kr-mail-theme.unsubscribe_path' => 'opt-out']);
-    krRegisterUnsubscribeRoute('opt-out');
+    krSetUnsubscribeRouteUri('opt-out');
 
     $url = UnsubscribeUrlGenerator::generate('user-123');
 
@@ -30,8 +29,6 @@ it('uses the configured Unsubscribe Path (FR-018, AC-007)', function () {
 });
 
 it('detects any alteration of the URL (FR-019, AC-007)', function () {
-    krRegisterUnsubscribeRoute();
-
     $url = UnsubscribeUrlGenerator::generate('user-123');
 
     expect(URL::hasValidSignature(Request::create($url)))->toBeTrue();
@@ -44,8 +41,6 @@ it('detects any alteration of the URL (FR-019, AC-007)', function () {
 });
 
 it('does not set an expiration (FR-020, AC-007)', function () {
-    krRegisterUnsubscribeRoute();
-
     $url = UnsubscribeUrlGenerator::generate('user-123');
 
     expect($url)->not->toContain('expires=')
