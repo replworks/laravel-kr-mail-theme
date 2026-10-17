@@ -41,7 +41,7 @@
 
 ## Phase 1: Rendering core
 
-- [ ] T-007 Configuration and BrandInformation
+- [x] T-007 Configuration and BrandInformation
   - Depends: T-002
   - Done when: unit tests pass for FR-003, FR-004, FR-007, FR-008, FR-039, FR-040, ERR-002: unset and empty values count as not supplied; Service Name and Logo give their Placeholders; the five footer fields are null when not supplied; environment-only values appear; a Service config value wins over an environment value; other keys survive the override (AC-002, AC-003, AC-013).
 
