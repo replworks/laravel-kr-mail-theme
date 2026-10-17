@@ -98,13 +98,13 @@
   - Depends: T-001
   - Done when: tests pass for FR-047 to FR-049 and FR-051 at repository level: row created when missing, true to false returns changed, false stays false and returns not changed, value stored as boolean.
 
-- [ ] T-020 Unsubscribed event
+- [x] T-020 Unsubscribed event
   - Depends: T-019
-  - Done when: tests pass for FR-050: event fires once on the first change and not on a repeated request (AC-018).
+  - Done when: tests pass for the event payload: it carries the Recipient User Identifier of the Unsubscribe request. The FR-050 firing rule (once on the first change, not on a repeated request) and its AC-018 are asserted in T-021, where the controller fires the event.
 
 - [ ] T-021 Unsubscribe route, controller, and SCR-002
   - Depends: T-016, T-020
-  - Done when: tests pass for FR-043 to FR-046, FR-052, FR-053, ERR-003 for both GET and POST, without login and without CSRF token (AC-016, AC-017, AC-019).
+  - Done when: tests pass for FR-043 to FR-046, FR-050, FR-051, FR-052, FR-053, ERR-003 for both GET and POST, without login and without CSRF token (AC-016, AC-017, AC-018, AC-019).
 
 ## Phase 3: Workbench
 
