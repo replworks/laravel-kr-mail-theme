@@ -1,4 +1,9 @@
 /* Placeholder Dark variant CSS. Visual design is human-owned; these values are neutral placeholders. */
+html,
+body {
+    background-color: #1a1a1a !important;
+}
+
 .kr-text {
-    color: #eeeeee;
+    color: #eeeeee !important;
 }

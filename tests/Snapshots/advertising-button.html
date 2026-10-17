@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko" style="background-color: #ffffff;">
 <head>
 <meta charset="utf-8">
 <meta name="color-scheme" content="light dark">
@@ -8,8 +8,13 @@
 <style>
 @media (prefers-color-scheme: dark) {
 /* Placeholder Dark variant CSS. Visual design is human-owned; these values are neutral placeholders. */
+html,
+body {
+    background-color: #1a1a1a !important;
+}
+
 .kr-text {
-    color: #eeeeee;
+    color: #eeeeee !important;
 }
 }
 @media only screen and (max-width: 375px) {
@@ -24,7 +29,7 @@
 }
 </style>
 </head>
-<body style="margin:0;padding:0;">
+<body style="background-color: #ffffff; margin: 0; padding: 0;">
 <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;">
   <tr>
     <td align="center">
@@ -36,7 +41,7 @@
   </td>
 </tr>
         <tr>
-          <td style="padding:16px;">
+          <td class="kr-text" style="color: #333333; padding: 16px;">
             <p>아래 버튼을 눌러 주문 내역을 확인해 주세요.</p>
 <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" style="background-color:#3182f6;border-radius:6px;padding:12px 24px;"><a href="https://example.com/orders/sample-user-1">주문 내역 확인하기</a></td></tr></table>
 

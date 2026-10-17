@@ -41,8 +41,10 @@ final class CssInliner
         $css = '';
 
         if ($forcedScheme === self::SCHEME_DARK) {
-            $css .= trim($this->darkCss)."\n";
-        } elseif ($forcedScheme === null) {
+            $css .= "html, body { color-scheme: dark; }\n".trim($this->darkCss)."\n";
+        } elseif ($forcedScheme === self::SCHEME_LIGHT) {
+            $css .= "html, body { color-scheme: light; }\n";
+        } else {
             $css .= "@media (prefers-color-scheme: dark) {\n".trim($this->darkCss)."\n}\n";
         }
 

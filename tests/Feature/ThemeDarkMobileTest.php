@@ -15,7 +15,8 @@ it('provides a Light variant and a Dark variant (FR-028)', function () {
     $out = CssInliner::fromTheme()->inline(krInformationalHtml());
 
     expect($out)->toContain('@media (prefers-color-scheme: dark) {')
-        ->toContain('color: #eeeeee;');
+        ->toContain('color: #eeeeee !important;')
+        ->toContain('background-color: #ffffff');
 
     expect(substr($out, 0, strpos($out, '@media')))->not->toContain('#eeeeee');
 });
