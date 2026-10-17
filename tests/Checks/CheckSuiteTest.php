@@ -24,7 +24,7 @@ function krCheckDataset(): array
 
     foreach ($kinds as $kindName => $kind) {
         foreach (array_keys(krCheckSamples()['bodies']) as $body) {
-            $dataset[$kindName.'-'.$body] = [$kind, $body];
+            $dataset[$kindName.'-'.$body] = [$kind, $body, $kindName.'-'.$body];
         }
     }
 
@@ -63,6 +63,32 @@ function krCheckApplyBrand(): void
 function krCheckAssertFr(string $fr, bool $condition, string $detail = ''): void
 {
     test()->assertTrue($condition, $fr.($detail === '' ? '' : ': '.$detail));
+}
+
+function krCheckApproving(): bool
+{
+    $value = getenv('KR_MAIL_THEME_APPROVE_SNAPSHOTS');
+
+    return $value !== false && $value !== '' && $value !== '0';
+}
+
+function krCheckCompareSnapshot(string $file, string $actual): void
+{
+    $path = dirname(__DIR__).'/Snapshots/'.$file;
+
+    if (krCheckApproving()) {
+        if (! is_dir(dirname($path))) {
+            mkdir(dirname($path), 0777, true);
+        }
+
+        file_put_contents($path, $actual);
+        test()->assertFileExists($path, 'FR-058: approved file written '.$file);
+
+        return;
+    }
+
+    test()->assertFileExists($path, 'FR-058: approved file missing for '.$file.' (run with KR_MAIL_THEME_APPROVE_SNAPSHOTS=1 to approve)');
+    test()->assertSame(file_get_contents($path), $actual, 'FR-058: approved part differs for '.$file);
 }
 
 function krCheckHeader(array $headers, string $name): ?string
@@ -104,7 +130,7 @@ function krCheckUnsupportedFeatures(array $check): array
     return $unsupported;
 }
 
-it('checks every Mail Kind and Sample Body combination (FR-054 to FR-057)', function (MailKind $kind, string $body) {
+it('checks every Mail Kind and Sample Body combination (FR-054 to FR-058)', function (MailKind $kind, string $body, string $name) {
     $client = krCheckPrepare();
     krCheckApplyBrand();
 
@@ -174,6 +200,9 @@ it('checks every Mail Kind and Sample Body combination (FR-054 to FR-057)', func
     krCheckAssertFr('FR-035', $fr035, 'the TEXT part has no tags or link syntax and every URL in full');
 
     krCheckAssertFr('FR-055', $fr005 && $fr006 && $fr033 && $fr034 && $fr035, 'FR-005, FR-006, FR-033, FR-034, and FR-035 hold');
+
+    krCheckCompareSnapshot($name.'.html', $html);
+    krCheckCompareSnapshot($name.'.txt', $text);
 
     if ($advertising) {
         $fr025 = $mail->subject === '(광고) '.Preview::SUBJECT;
