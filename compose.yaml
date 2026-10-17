@@ -1,0 +1,6 @@
+services:
+  mailpit:
+    image: axllent/mailpit
+    ports:
+      - "3025:1025"
+      - "38025:8025"
