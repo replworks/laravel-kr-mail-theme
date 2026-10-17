@@ -75,7 +75,7 @@
   - Depends: T-001
   - Done when: tests pass for FR-016 to FR-020: absolute URL, uses the configured Unsubscribe Path, altered URL fails the signature check, URL does not expire (AC-007).
 
-- [ ] T-015 Theme: Advertising layout
+- [x] T-015 Theme: Advertising layout
   - Depends: T-012, T-014
   - Done when: tests pass for FR-010, FR-013 (AC-005), and an Advertising Mail with no Company Name and no Customer Center Contact renders with the Unsubscribe Link and neither field.
 
