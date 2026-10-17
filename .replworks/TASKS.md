@@ -113,7 +113,7 @@
   - Work: four Blade Sample Bodies that output Markdown, one fixed Brand Information set with every field, one fixed Recipient User Identifier, one fixed Recipient Name.
   - Done when: each of the four renders inside both Mail Kinds without error (FR-041).
 
-- [ ] T-023 SCR-001 preview
+- [x] T-023 SCR-001 preview
   - Depends: T-022
   - Work: EL-001 to EL-007 and the Initial, Loading, Populated, Error states.
   - Done when: in a browser, changing each selector updates EL-005, EL-006, EL-007 as listed in PRODUCT_SPEC Interactions; Mobile width is 375 px; Dark shows the Dark variant (FLOW-002 steps 1 and 2).
