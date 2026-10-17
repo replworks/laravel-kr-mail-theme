@@ -9,7 +9,7 @@
 
 ## Phase 0: Verify the unknowns
 
-- [ ] T-001 Scaffold the repository
+- [x] T-001 Scaffold the repository
   - Depends: none
   - Work: composer.json (library, auto-discovery), Pest, Pint, Testbench with Workbench, `compose.yaml` for Mailpit, empty service provider.
   - Done when: `composer test` runs an empty suite with exit code 0, and the Mailpit web interface opens after `docker compose up -d`.
