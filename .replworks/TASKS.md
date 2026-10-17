@@ -129,7 +129,7 @@
   - Depends: T-003, T-022
   - Done when: a test can empty Mailpit, send a rendered mail, and read back HTML part, TEXT part, headers, and HTML check result.
 
-- [ ] T-026 Check suite: FR assertions
+- [x] T-026 Check suite: FR assertions
   - Depends: T-025, T-016
   - Done when: the suite runs 8 combinations and asserts FR-054 to FR-057; each assertion message starts with its FR ID.
 
