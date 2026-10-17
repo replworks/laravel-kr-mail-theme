@@ -143,7 +143,7 @@
 
 ## Phase 5: Release
 
-- [ ] T-029 Acceptance pass
+- [x] T-029 Acceptance pass
   - Depends: T-018, T-021, T-024, T-028
   - Done when: AC-001 to AC-021 each map to a named passing test or a recorded manual run, listed in one table in the repository.
 
