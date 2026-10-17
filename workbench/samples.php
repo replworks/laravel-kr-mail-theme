@@ -15,7 +15,7 @@ return [
 
     'recipient_name' => '홍길동',
 
-    'view_namespace' => 'kr-workbench',
+    'view_namespace' => 'workbench',
 
     'views_path' => __DIR__.'/resources/views',
 
