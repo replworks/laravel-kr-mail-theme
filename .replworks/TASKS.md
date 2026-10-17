@@ -49,7 +49,7 @@
   - Depends: T-001
   - Done when: unit tests pass for FR-025, FR-026, FR-027 including a subject that already begins with `(광고)` (AC-009).
 
-- [ ] T-009 CssInliner
+- [x] T-009 CssInliner
   - Depends: T-002
   - Work: inline `base.css`. Keep dark and mobile CSS as a `<style>` element in `<head>`. Support a forced scheme.
   - Done when: a unit test shows inlined styles on elements and the media-query CSS present and unchanged; with a forced scheme the variant appears without the media condition.
