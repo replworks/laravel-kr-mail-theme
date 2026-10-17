@@ -84,7 +84,7 @@
   - Work: the pipeline from ARCHITECTURE.md, the TEXT layout, headers for Advertising Mail only.
   - Done when: tests pass for FR-005 to FR-007 in the TEXT part, FR-021 to FR-024, FR-033 to FR-037, ERR-001, ERR-004 (AC-003, AC-004, AC-006, AC-008, AC-012).
 
-- [ ] T-017 BodyViewRenderer
+- [x] T-017 BodyViewRenderer
   - Depends: T-001
   - Done when: tests pass for FR-060 and FR-061: `홍길동` gives `홍길동님`; null and empty string give `회원님`; a Service variable and `$recipientDisplayName` are both available in the view; HTML in a Service variable is escaped (AC-021).
 
