@@ -38,7 +38,7 @@ No other production dependency is allowed.
 - Mailpit (container image `axllent/mailpit`), started by a Compose file in the Package repository.
   - SMTP port for Test Delivery and automated checks.
   - HTTP port for the web interface (EL-011) and the HTTP API used by the automated checks.
-  - [UNVERIFIED: HTTP API endpoints for message list, message HTML, message TEXT, message headers, HTML check, and delete-all, and the shape of the HTML check JSON. T-003.]
+  - [Verified in T-003] HTTP API: message list `GET /api/v1/messages`, message summary `GET /api/v1/message/{ID}`, message HTML `GET /view/{ID}.html`, message TEXT `GET /view/{ID}.txt`, message headers `GET /api/v1/message/{ID}/headers`, HTML check `GET /api/v1/message/{ID}/html-check`, delete-all `DELETE /api/v1/messages`. The HTML check JSON reports per-feature client support at `Warnings[].Results[].Support` (`yes`/`partial`/`no`); a feature with `no` in every client means no support in any mail client. Fixture: `tests/Fixtures/mailpit-html-check.json`.
 - Docker (or a compatible container runtime) on the Developer machine.
 
 ## Mail Body Conversion
