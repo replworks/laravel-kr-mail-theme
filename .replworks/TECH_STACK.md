@@ -10,7 +10,7 @@
 
 ## Runtime
 
-- Language: PHP. Supported versions: the versions supported by Laravel 12 and Laravel 13. [UNVERIFIED: exact minimum PHP version of each Laravel version. T-002.]
+- Language: PHP. Supported versions: PHP 8.2 and later for Laravel 12, PHP 8.3 and later for Laravel 13 (verified from Packagist require strings `^8.2` and `^8.3`; package minimum is `^8.3`).
 - Host framework: Laravel 12 and Laravel 13.
 - Package form: Composer library with an auto-discovered service provider.
 - Distribution: public GitHub repository. Packagist registration is undecided (see Open Decisions).
@@ -21,16 +21,16 @@
 
 These are installed in every Service.
 
-- illuminate/support, illuminate/view, illuminate/mail, illuminate/routing, illuminate/database, illuminate/events. Version constraint: `^12.0|^13.0`.
-- league/commonmark: parses the Mail Body Markdown into a syntax tree. Used for both the HTML part and the TEXT part. [UNVERIFIED: already required by illuminate/mail in both Laravel versions, and the tables extension is included. T-002.]
-- tijsverkoyen/css-to-inline-styles: inlines CSS into the table layout. [UNVERIFIED: already required by illuminate/mail in both Laravel versions. T-002.]
+- laravel/framework. Version constraint: `^12.0|^13.0`. It requires league/commonmark `^2.8.1` and tijsverkoyen/css-to-inline-styles `^2.2.5` in both Laravel 12 (verified v12.70.0) and Laravel 13 (verified v13.37.0).
+- league/commonmark: parses the Mail Body Markdown into a syntax tree. Used for both the HTML part and the TEXT part. The tables extension (`TableExtension`) ships inside the package.
+- tijsverkoyen/css-to-inline-styles: inlines CSS into the table layout.
 
 No other production dependency is allowed.
 
 ## Development Dependencies
 
-- orchestra/testbench: runs the Package inside a Laravel application and provides the Workbench skeleton. The major version follows the Laravel major version. [UNVERIFIED: exact major per Laravel version. T-002.]
-- pestphp/pest and pestphp/pest-plugin-laravel: test runner for the automated checks (FR-054 to FR-059).
+- orchestra/testbench: runs the Package inside a Laravel application and provides the Workbench skeleton. Testbench 10 follows Laravel 12 and Testbench 11 follows Laravel 13 (constraint `^10.0|^11.0`).
+- pestphp/pest `^4.0` and pestphp/pest-plugin-laravel `^4.0`: test runner for the automated checks (FR-054 to FR-059). Verified working with both Laravel 12 and Laravel 13.
 - laravel/pint: code style.
 
 ## Infrastructure
