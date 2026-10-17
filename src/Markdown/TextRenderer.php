@@ -3,6 +3,7 @@
 namespace Replworks\KrMailTheme\Markdown;
 
 use League\CommonMark\Extension\CommonMark\Node\Block\BlockQuote;
+use League\CommonMark\Extension\CommonMark\Node\Inline\HtmlInline;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Link;
 use League\CommonMark\Extension\Table\Table;
 use League\CommonMark\Node\Block\Document;
@@ -84,6 +85,8 @@ final class TextRenderer
                 $url = $child->getUrl();
 
                 $text .= $label === $url ? $url : $label.': '.$url;
+            } elseif ($child instanceof HtmlInline) {
+                $text .= strip_tags($child->getLiteral());
             } elseif ($child->firstChild() !== null) {
                 $text .= $this->inline($child);
             } else {
