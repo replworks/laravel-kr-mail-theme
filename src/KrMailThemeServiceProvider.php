@@ -14,5 +14,6 @@ class KrMailThemeServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadViewsFrom(__DIR__.'/../resources/theme', 'kr-mail-theme');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 }
