@@ -86,13 +86,14 @@ Service Mailable / Workbench / Checks
 - Parses the Mail Body Markdown once into a syntax tree. Raw HTML in the Markdown is escaped and unsafe link schemes are not rendered.
 - HTML renderer: standard conversion, plus one rule: a paragraph whose only child is one link becomes a button (table-based, inline-styled) (FR-030 to FR-032).
 - TEXT renderer: walks the same tree and writes plain text (FR-035):
-  - paragraph: its text, then a blank line
+  - paragraph: its text
   - link: `label: URL`, or only the URL when label and URL are equal
-  - button: `label: URL` on its own line
-  - table: one line per row, cells separated by `|`
-  - blockquote: lines prefixed with `> `
+  - button: `label: URL` on its own line (a link-only paragraph is its own block)
+  - table: one line per row, cells joined by ` | `
+  - blockquote: each line prefixed with `> `
   - anything else: its text content
-- [UNVERIFIED: the library allows both renderers on one tree. T-006. The exact TEXT forms above are a default and can be changed in that task.]
+  - blocks are separated by a blank line, and the output ends with a single newline
+- [Verified in T-006] One parse feeds both renderers. The HTML renderer overrides the paragraph renderer so a paragraph whose only child is one link becomes a table-based button; the TEXT renderer walks the same `Document`. The forms above are what the spike produces, pinned by `tests/MarkdownConversionTest.php`.
 
 ### Theme
 

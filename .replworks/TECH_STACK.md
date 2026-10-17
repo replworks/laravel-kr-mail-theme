@@ -44,7 +44,7 @@ No other production dependency is allowed.
 ## Mail Body Conversion
 
 - Input: Markdown produced by a Service Blade view.
-- One parse, two renderers: the HTML renderer (with a rule that turns a link-only paragraph into a button) and the TEXT renderer (a walker over the same syntax tree). [UNVERIFIED: league/commonmark extension points are enough for both. T-006.]
+- One parse, two renderers: the HTML renderer (with a rule that turns a link-only paragraph into a button) and the TEXT renderer (a walker over the same syntax tree). [Verified in T-006: league/commonmark extension points are enough for both.]
 - Raw HTML inside the Markdown is escaped, and unsafe link schemes are not rendered as links.
 - Markdown elements supported at minimum: paragraph, link, table, blockquote (FR-032). Others (headings, lists, emphasis) are converted if the library does so by default, and are not covered by the automated checks.
 
