@@ -22,7 +22,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Replworks\\KrMailTheme\\Tests\\": "tests/"
+            "Replworks\\KrMailTheme\\Tests\\": "tests/",
+            "Workbench\\App\\": "workbench/app/"
         }
     },
     "extra": {
