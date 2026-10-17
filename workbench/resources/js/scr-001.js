@@ -16,6 +16,9 @@
 
     var state = 'initial';
 
+    var token = document.querySelector('meta[name="csrf-token"]');
+    token = token ? token.getAttribute('content') : '';
+
     function addressIsValid() {
         return /.+@.+\..+/.test(el.address.value.trim());
     }
@@ -77,9 +80,56 @@
             });
     }
 
+    function result(state, message) {
+        el.result.hidden = false;
+        el.result.dataset.state = state;
+        el.result.textContent = message;
+    }
+
+    function send() {
+        var params = query();
+
+        result('sending', 'in-progress');
+        applyState('sending');
+
+        fetch('/send', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json',
+                'X-CSRF-TOKEN': token
+            },
+            body: JSON.stringify({
+                kind: params.kind,
+                body: params.body,
+                recipient: el.address.value.trim()
+            })
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                if (data.state === 'delivered') {
+                    result('sent', 'delivered');
+                    applyState('sent');
+
+                    return;
+                }
+
+                result('send-failed', 'failed: ' + data.error);
+                applyState('send-failed');
+            })
+            .catch(function () {
+                result('send-failed', 'failed: ERR-005');
+                applyState('send-failed');
+            });
+    }
+
     ['kind', 'body', 'viewport', 'scheme'].forEach(function (key) {
         el[key].addEventListener('change', update);
     });
+
+    el.send.addEventListener('click', send);
 
     el.address.addEventListener('input', function () {
         if (state !== 'loading' && state !== 'sending' && state !== 'error') {

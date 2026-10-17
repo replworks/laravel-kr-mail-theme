@@ -196,6 +196,7 @@ Table `kr_mail_consents`:
 - EL-009 is enabled only when EL-008 is a valid email address and the state is Populated, Sent, or Send failed (ERR-006).
 - Mail transport: SMTP to the local Mailpit only. No other transport is configured (FR-042).
 - Mailpit unreachable: `POST /send` returns failed with ERR-005. No retry.
+- An invalid EL-008 value is rejected by `POST /send` with failed and ERR-006 (the button is disabled, ERR-006).
 - The Dark preview is display-only. The mail sent by EL-009 uses the normal media-query version.
 
 ## Automated Checks (repository only)
