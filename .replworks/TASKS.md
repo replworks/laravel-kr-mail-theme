@@ -29,7 +29,7 @@
   - Work: build a minimal table-layout mail with `prefers-color-scheme` and a narrow-width media query in a `<style>` element. Run the HTML check.
   - Done when: the result is recorded. If the HTML check reports unsupported features, the Developer decides how FR-054 and FR-028 are reconciled and PRODUCT_SPEC.md is updated.
 
-- [ ] T-005 Verify raw HTML, TEXT, and headers on a Mailable
+- [x] T-005 Verify raw HTML, TEXT, and headers on a Mailable
   - Depends: T-003
   - Work: in a Testbench test, build a Mailable that carries a raw HTML string, a raw TEXT string, and the two List-Unsubscribe headers, in Laravel 12 and 13. Send it to Mailpit.
   - Done when: Mailpit shows both parts and both headers, and the working calls are written in ARCHITECTURE.md under RendersKrTheme.
