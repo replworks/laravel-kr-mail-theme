@@ -137,7 +137,7 @@
   - Depends: T-026
   - Done when: FR-058 passes against approved `.html` and `.txt` files in `tests/Snapshots`; changing one character in a Theme file or the TEXT layout makes the matching combinations fail; the approve switch rewrites the files.
 
-- [ ] T-028 Check suite: exit behavior
+- [x] T-028 Check suite: exit behavior
   - Depends: T-027
   - Done when: AC-020 and ERR-007 are shown by breaking one rule on purpose: the output shows one fail line with the FR ID and the exit code is non-zero; restoring it gives exit code 0 (FR-059).
 
